@@ -1,4 +1,4 @@
-const data = require('./data');
+const data = require('./data.json');
 
 const express = require('express');
 const app = express();
@@ -22,6 +22,16 @@ app.get('/', (req, res) => {
 
 app.get('/data', (req, res) => {
     res.send(data);
+});
+
+app.get('/data/:id', (req, res) => {
+    const id = req.params.id;
+    const exist = data.find(x => x.id == id);
+    if(exist) {
+        res.send(data[id-1])
+    } else {
+        res.status(404).send("No, this product doesn't exist!")
+    }
 });
 
 /***** Make the API go online *****/
