@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 const data = require('./data.json');
+=======
+const data = require('./data');
+>>>>>>> 6965471b76d00e0505340be8d9b0f2d8487da82a
 
 const express = require('express');
 const app = express();
@@ -24,6 +28,7 @@ app.get('/data', (req, res) => {
     res.send(data);
 });
 
+<<<<<<< HEAD
 app.get('/data/:id', (req, res) => {
     const id = req.params.id;
     const exist = data.find(x => x.id == id);
@@ -34,6 +39,8 @@ app.get('/data/:id', (req, res) => {
     }
 });
 
+=======
+>>>>>>> 6965471b76d00e0505340be8d9b0f2d8487da82a
 /***** Make the API go online *****/
 const port = process.env.PORT || 8080;
 app.listen(port, () => {
