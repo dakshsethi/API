@@ -1,5 +1,4 @@
 const data = require('./data.json');
-
 const express = require('express');
 const app = express();
 app.use(express.json()); //Adding Middleware and using that Middleware
